@@ -8,7 +8,7 @@
         /// <summary>
         /// <para>Displays <paramref name="meterCount"/>.</para>
         /// </summary>
-        /// <param name="meterCount">The meter count</param>
+        /// <param name="meterCount">A meter count</param>
         void DisplayMeterCount(double meterCount);
     }
 }
