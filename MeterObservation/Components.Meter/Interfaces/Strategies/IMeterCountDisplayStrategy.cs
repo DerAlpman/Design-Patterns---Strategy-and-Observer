@@ -9,6 +9,6 @@
         /// <para>Displays <paramref name="meterCount"/>.</para>
         /// </summary>
         /// <param name="meterCount">A meter count</param>
-        void DisplayMeterCount(double meterCount);
+        void DisplayMeterCount(string meterCount);
     }
 }

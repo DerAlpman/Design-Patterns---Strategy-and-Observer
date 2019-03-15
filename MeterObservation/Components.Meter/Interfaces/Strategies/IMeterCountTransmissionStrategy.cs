@@ -9,6 +9,6 @@
         /// <para>Transmits <paramref name="meterCount"/>.</para>
         /// </summary>
         /// <param name="meterCount">A meter count</param>
-        void TransmitMeterCount(double meterCount);
+        void TransmitMeterCount(string meterCount);
     }
 }

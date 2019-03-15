@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F1F413A-117E-408C-BA03-3A59BDC7AB44}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Components.Meter</RootNamespace>
-    <AssemblyName>Components.Meter</AssemblyName>
+    <ProjectGuid>{5D33DBD3-07EC-4A71-8661-66C4C5C76AF1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MeterObservation</RootNamespace>
+    <AssemblyName>MeterObservation</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,14 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractMeter.cs" />
-    <Compile Include="AbstractMeterCountMeasurementStrategy.cs" />
-    <Compile Include="Interfaces\IMeter.cs" />
-    <Compile Include="Interfaces\Strategies\IMeterCountMeasurementStrategy.cs" />
-    <Compile Include="Interfaces\Strategies\IMeterCountTransmissionStrategy.cs" />
-    <Compile Include="Interfaces\Strategies\IMeterCountDisplayStrategy.cs" />
+    <Compile Include="DataDeterminationStrategies\RotaryPistonMeasurement.cs" />
+    <Compile Include="DataDeterminationStrategies\UltraSoundMeasurement.cs" />
+    <Compile Include="DisplayStrategies\ScaleDisplay.cs" />
+    <Compile Include="DisplayStrategies\LEDDisplay.cs" />
+    <Compile Include="Meters\GasMeter.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransmissionStrategies\CableTransmission.cs" />
+    <Compile Include="TransmissionStrategies\WLANTransmission.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Components.Meter\Components.Meter.csproj">
+      <Project>{6F1F413A-117E-408C-BA03-3A59BDC7AB44}</Project>
+      <Name>Components.Meter</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
