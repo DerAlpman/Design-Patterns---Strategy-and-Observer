@@ -7,8 +7,5 @@ namespace MeterObservation.DataDeterminationStrategies
     /// </summary>
     internal class UltraSoundMeasurement : AbstractMeterCountMeasurementStrategy
     {
-        public UltraSoundMeasurement()
-        {
-        }
     }
 }

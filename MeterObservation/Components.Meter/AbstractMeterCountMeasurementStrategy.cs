@@ -8,7 +8,6 @@ namespace Components.Meter
     /// </summary>
     public abstract class AbstractMeterCountMeasurementStrategy : IMeterCountMeasurementStrategy
     {
-
         #region IMeterCountMeasurementStrategy
 
         /// <summary>
